@@ -1,0 +1,218 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  overflow: hidden; }
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.menu-container {
+  padding-top: 10%;
+  max-width: 90%;
+  margin: 0 auto; }
+  .menu-container h2 {
+    font-size: 5rem;
+    color: #fff;
+    font-weight: 700;
+    padding-bottom: 50px; }
+
+.menu-button {
+  position: relative;
+  display: block;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 35px;
+  height: 35px;
+  background: #333; }
+  .menu-button .menu-line {
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    height: 3px;
+    width: 70%;
+    left: 50%;
+    transform: translate(-50%);
+    top: 8px;
+    border-radius: 2px;
+    background: #fff;
+    animation-delay: 0.1s; }
+    .menu-button .menu-line:nth-child(2) {
+      top: 16px; }
+    .menu-button .menu-line:nth-child(3) {
+      top: 24px; }
+  .menu-button:hover .menu-line {
+    animation: menu-lines-anim 1s ease-in-out; }
+    .menu-button:hover .menu-line:nth-child(2) {
+      animation-delay: 0.3s; }
+    .menu-button:hover .menu-line:nth-child(3) {
+      animation-delay: 0.4s; }
+
+.menu-title {
+  position: absolute;
+  left: 80px;
+  top: 14px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 12px; }
+
+.main-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0;
+  animation: main-menu-anim 1s ease;
+  animation-fill-mode: forwards; }
+
+@keyframes main-menu-anim {
+  100% {
+    opacity: 1; } }
+.hidden {
+  display: none; }
+
+.pages {
+  display: table;
+  width: 100%; }
+
+.pages > li {
+  box-sizing: border-box;
+  display: table-cell;
+  width: 20%;
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 2.5%;
+  opacity: 0;
+  animation: main-menu-anim 1s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.8s; }
+  .pages > li > ul > li {
+    padding-top: 10%;
+    text-transform: uppercase; }
+
+.close-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 200px; }
+
+.close {
+  display: block;
+  position: relative;
+  background: transparent;
+  border: 1px solid #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 100px;
+  opacity: 0;
+  animation: main-menu-anim 1s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.8s; }
+  .close:after {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -2px;
+    transform: rotate(45deg);
+    z-index: 999; }
+  .close:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-top: -2px;
+    transform: rotate(-45deg);
+    z-index: 999; }
+  .close:hover:before {
+    transform: rotate(135deg);
+    transition: all 0.6s ease; }
+  .close:hover:after {
+    transform: rotate(-135deg);
+    transition: all 0.6s ease; }
+
+.page-title {
+  position: relative;
+  color: #fff;
+  width: 100%;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin-bottom: 20px; }
+  .page-title:after {
+    content: '';
+    width: 12vw;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background: #fff;
+    position: absolute; }
+
+@keyframes menu-lines-anim {
+  50% {
+    left: 100%;
+    transform: translate(0%); }
+  100% {
+    left: 50%; } }
+
+/*# sourceMappingURL=main.css.map */
